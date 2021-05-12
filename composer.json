@@ -1,35 +1,36 @@
 {
-    "name": "ahmetbedir/voyager-bread-generator",
-    "description": "Create BREAD from the console using artisan",
-    "type": "library",
-    "require": {
-        "tcg/voyager": "^1.0"
+  "name": "ahmetbedir/voyager-bread-generator",
+  "description": "Create BREAD from the console using artisan",
+  "type": "library",
+  "require": {
+    "tcg/voyager": "^1.0"
+  },
+  "require-dev": {
+    "laravel/laravel": "^5.5"
+  },
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Jeff Ochoa",
+      "email": "jeffer.8a@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "VoyagerBread\\": "src/"
+    }
+  },
+  "extra": {
+    "hook": {
+      "providers": [
+        "VoyagerBread\\BreadGeneratorServiceProvider"
+      ]
     },
-    "require-dev": {
-        "laravel/laravel": "^5.5"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Jeff Ochoa",
-            "email": "jeffer.8a@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-          "VoyagerBread\\": "src/"
-        }
-      },
-      "extra": {
-        "hook": {
-          "providers": [
-            "VoyagerBread\\BreadGeneratorServiceProvider"
-          ]
-        },
-        "laravel": {
-            "providers": [
-                "VoyagerBread\\BreadGeneratorServiceProvider"
-            ]
-        }
-      }
+    "laravel": {
+      "providers": [
+        "VoyagerBread\\BreadGeneratorServiceProvider"
+      ]
+    }
+  }
 }
