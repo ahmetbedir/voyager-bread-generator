@@ -2,7 +2,7 @@
     "name": "ahmetbedir/voyager-bread-generator",
     "description": "Create BREAD from the console using artisan",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "tcg/voyager": "^1.0"
     },
