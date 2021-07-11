@@ -13,11 +13,11 @@ class DummyClassBreadSeeder extends Seeder
     {
         return [
             // usually the name of the table
-            'name'                  => 'DummySnakeCaseSingular',
+            'name'                  => 'DummyStudlyCasePlural',
             'display_name_singular' => 'DummyStudlyCaseSingular',
             'display_name_plural'   => 'DummyStudlyCasePlural',
             'icon'                  => '',
-            'model_name'            => 'App\DummyStudlyCaseSingular',
+            'model_name'            => 'App\Models\DummyStudlyCaseSingular',
             'controller'            => '',
             'generate_permissions'  => 1,
             'description'           => '',
