@@ -29,7 +29,7 @@ class BreadGenerator extends GeneratorCommand
      */
     public function handle()
     {
-        $seederName = Str::studly(Str::plural($this->argument('name')).'BreadSeeder');
+        $seederName = Str::studly(Str::plural($this->argument('name')) . 'BreadSeeder');
         $this->info('Making BREAD');
 
         parent::handle();
@@ -91,7 +91,7 @@ class BreadGenerator extends GeneratorCommand
     {
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
 
-        return  base_path('database/seeders').'/'.str_replace('\\', '/', Str::plural($name)).'BreadSeeder.php';
+        return  base_path('database/seeders') . '/' . str_replace('\\', '/', Str::plural($name)) . 'BreadSeeder.php';
     }
 
     /**
@@ -139,6 +139,6 @@ class BreadGenerator extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/../stubs/bread.stub';
+        return __DIR__ . '/../stubs/bread.stub';
     }
 }

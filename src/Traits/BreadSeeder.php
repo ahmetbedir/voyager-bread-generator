@@ -37,6 +37,16 @@ trait BreadSeeder
     }
 
     /**
+     * Get bread table name
+     *
+     * @return string
+     */
+    public function getTableName()
+    {
+        return $this->bread()['name'];
+    }
+
+    /**
      * Create all the input fields specified in the
      * bread() method
      *
@@ -52,7 +62,6 @@ trait BreadSeeder
                 $dataRow->fill($field)->save();
             }
         });
-
     }
 
     /**
@@ -88,7 +97,31 @@ trait BreadSeeder
      */
     public function generatePermissions()
     {
-        Permission::generateFor($this->bread()['name']);
+        // Permission::generateFor($this->bread()['name']);
+        $this->permissionHelper($this->getTableName(), $this->excludePermission());
+    }
+
+    private function permissionHelper(string $tableName, array $exclude = [])
+    {
+        $perms = ['browse', 'read', 'edit', 'add', 'delete'];
+
+        if (count($exclude)) {
+            $perms = array_filter($perms, function ($perm) use ($exclude) {
+                return !in_array($perm, array_unique($exclude));
+            });
+        }
+
+        foreach ($perms as $perm) {
+            Permission::firstOrCreate([
+                'key' => $perm . '_' . $tableName,
+                'table_name' => $tableName
+            ]);
+        }
+    }
+
+    public function excludePermission()
+    {
+        return [];
     }
 
     /**
@@ -115,8 +148,8 @@ trait BreadSeeder
     protected function dataRow($type, $field)
     {
         return DataRow::firstOrNew([
-                'data_type_id' => $type->id,
-                'field'        => $field,
-            ]);
+            'data_type_id' => $type->id,
+            'field'        => $field,
+        ]);
     }
 }

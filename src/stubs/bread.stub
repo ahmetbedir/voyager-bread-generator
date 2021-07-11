@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\DummyStudlyCaseSingular;
 use Illuminate\Database\Seeder;
 use VoyagerBread\Traits\BreadSeeder;
 
-class DummyClassBreadSeeder extends Seeder
+class DummyStudlyCasePluralBreadSeeder extends Seeder
 {
     use BreadSeeder;
 
@@ -17,7 +18,7 @@ class DummyClassBreadSeeder extends Seeder
             'display_name_singular' => 'DummyStudlyCaseSingular',
             'display_name_plural'   => 'DummyStudlyCasePlural',
             'icon'                  => '',
-            'model_name'            => 'App\Models\DummyStudlyCaseSingular',
+            'model_name'            => App\Models\DummyStudlyCaseSingular::class,
             'controller'            => '',
             'generate_permissions'  => 1,
             'description'           => '',
