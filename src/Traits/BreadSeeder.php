@@ -124,7 +124,7 @@ trait BreadSeeder
      *
      * @return array
      */
-    public function excludePermission()
+    public function excludePermission(): array
     {
         return [];
     }
