@@ -119,6 +119,11 @@ trait BreadSeeder
         }
     }
 
+    /**
+     * Exclude permissions
+     *
+     * @return array
+     */
     public function excludePermission()
     {
         return [];
