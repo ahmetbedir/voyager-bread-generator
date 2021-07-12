@@ -21,6 +21,7 @@ trait BreadSeeder
         $this->createInputFields();
         $this->createMenuItem();
         $this->generatePermissions();
+        $this->createData();
     }
 
     /**
@@ -127,6 +128,16 @@ trait BreadSeeder
     public function excludePermission(): array
     {
         return [];
+    }
+
+    /**
+     * Create Seeder Data
+     *
+     * @return void
+     */
+    public function createData()
+    {
+        // 
     }
 
     /**

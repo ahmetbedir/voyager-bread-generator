@@ -81,4 +81,9 @@ class DummyStudlyCasePluralBreadSeeder extends Seeder
             'order'      => 8,
         ];
     }
+
+    public function createData()
+    {
+        //
+    }
 }
