@@ -36,11 +36,14 @@ class BreadGenerator extends GeneratorCommand
         parent::handle();
 
         if ($this->option('model-migration')) {
+            $this->info("model-migration");
             $this->createMigration();
             $this->createModel();
         } else if ($this->option('migration')) {
+            $this->info("migration");
             $this->createMigration();
         } else if ($this->option('model')) {
+            $this->info("model");
             $this->createModel();
         }
 
