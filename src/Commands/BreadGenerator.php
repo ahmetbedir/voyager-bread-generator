@@ -13,9 +13,9 @@ class BreadGenerator extends GeneratorCommand
      * @var string
      */
     protected $signature = 'voyager:bread {name}
-                            {--mm|model-migration : creates a new model and migration for this bread}
-                            {--migration : creates a new migration for this bread}
-                            {--model : creates a new model for this bread}';
+                            {--c|model-migration : creates a new model and migration for this bread}
+                            {--s|migration : creates a new migration for this bread}
+                            {--m|model : creates a new model for this bread}';
 
     /**
      * The console command description.
