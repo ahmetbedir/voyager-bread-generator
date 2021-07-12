@@ -13,8 +13,8 @@ class BreadGenerator extends GeneratorCommand
      * @var string
      */
     protected $signature = 'voyager:bread {name}
-                            {--migration : creates a new migration for this bread}
-                            {--model : creates a new model for this bread}
+                            {--mg|migration : creates a new migration for this bread}
+                            {--m|model : creates a new model for this bread}
                             {--mm|model-migration : creates a new model and migration for this bread}';
 
     /**
@@ -35,18 +35,16 @@ class BreadGenerator extends GeneratorCommand
 
         parent::handle();
 
-        if ($this->option('migration')) {
-            $this->createMigration();
-        }
-
-        if ($this->option('model')) {
-            $this->createModel();
-        }
-
         if ($this->option('model-migration')) {
             $this->createMigration();
             $this->createModel();
+        } else if ($this->option('migration')) {
+            $this->createMigration();
+        } else if ($this->option('model')) {
+            $this->createModel();
         }
+
+
 
         $this->info('You are almost ready: ');
         $this->info("1. Once you finish the seed configuration, you need to run : php artisan db:seed --class={$seederName}");
