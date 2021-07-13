@@ -22,6 +22,7 @@ class DummyStudlyCasePluralBreadSeeder extends Seeder
             'controller'            => '',
             'generate_permissions'  => 1,
             'description'           => '',
+            'server_side'           => 0
         ];
     }
 
