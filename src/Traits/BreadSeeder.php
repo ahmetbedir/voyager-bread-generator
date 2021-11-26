@@ -86,7 +86,7 @@ trait BreadSeeder
 
         $menuItem = MenuItem::firstOrNew($menuEntry->only(['menu_id', 'title', 'url', 'route'])->toArray());
         if (!$menuItem->exists) {
-            $menuItem->fill($menuEntry->only(['target', 'icon_class', 'color', 'parent_id', 'order'])->toArray())->save();
+            $menuItem->fill($menuEntry->only(['target', 'icon_class', 'color', 'parent_id', 'order', 'parameters'])->toArray())->save();
         }
     }
 
